@@ -1,0 +1,72 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.user_profile_pic{
+  border: 1px, solid, blue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.user_stats{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+
+  font-size: 20px;
+  padding: 40px 0px;
+
+}
+
+.show_button{
+}
+
+.show_stats_and_buttons{
+
+  margin: 0px 150px;
+
+}
+
+.show_button{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.show_posts{
+
+}
+
+.show_followers{
+
+}
+
+.show_followees{
+
+}
+
+.user_top{
+  background-color: white;
+  border-radius: 15px;
+  background: rgba(255,255,255, 0.25);
+  padding: 15px 0px;
+}
+
+.show_bio{
+  text-align: center;
+  padding: 40px 0 40px;
+  font-style: italic;
+}
+
+.picture_container{
+  display: flex;
+  flex-flow: row wrap;
+
+}

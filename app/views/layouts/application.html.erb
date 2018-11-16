@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Fauxgram</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="site_layout">
+    <div class="navigation_and_logo">
+
+      <!-- <div class="back_button, nav" >
+        <%=link_to "Back", redirect_path, class: "nav"%>
+      </div> -->
+      <div class="index_button, nav" >
+        <%= link_to "Feed", users_index_path, class: "nav"%>
+      </div>
+
+      <div class="search_button, nav">
+        <%= link_to "Search", search_path, class: "nav"%>
+      </div>
+      <%= link_to "FAUXGRAM", users_index_path, :class =>
+      "logo" %>
+      <div class="discover_button, nav" >
+        <%=link_to "Discover Users", discover_path, class: "nav"%>
+      </div>
+      <% if session[:user_id]%>
+      <div class="profile_button, nav">
+        <%=link_to "Profile", "/users/#{session[:user_id]}", class: "nav"%>
+      </div>
+      <% end %>
+
+
+    </div>
+    <!-- <video autoplay muted loop id="myVideo">
+    <source src="app/giphy.mp4" type="video/mp4">
+    </video> -->
+    <!-- download video from youtube
+    video tag on this page pointing to video
+    rails magic with video
+    myVideo css (all directions 0)
+    width 100 vh (viewport height)
+    content fit cover -->
+
+    <%= video_tag('snow_falling.mp4', class: "myVideo", loop: true, autoplay: true) %>
+
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/bBQNJ6IAbcE?showinfo=0loop=1&autoplay=1&iv_load_policy=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="myVideo" ></iframe> -->
+    <%= yield %>
+  </body>
+
+</html>

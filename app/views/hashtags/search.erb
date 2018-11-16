@@ -1,0 +1,14 @@
+<div class="centering_container">
+  <div class="form_container">
+
+
+  <%= form_for(Hashtag.new, url: search_result_path, method: :get )  do |f| %>
+    <div class="label">
+      <%= f.label "Hashtag Input" %>
+    </div>
+
+    <%= f.text_field :hashtag %>
+    <%= f.submit "Find" %>
+  <% end %>
+    </div>
+</div>

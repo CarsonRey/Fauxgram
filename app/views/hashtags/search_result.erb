@@ -1,0 +1,15 @@
+<div class="centering_container">
+<div class="post">
+
+</div>
+<% if @hashtag%>
+  <%@pictures.each do |picture| %>
+    <%= image_tag picture.img_url %>
+  <% end %>
+  <% else %>
+  <div class="message">
+    <p class="red">Sorry!</p> <p class="inner_message">There are no pictures with the hashtag you entered. Click <%= link_to "here", search_path, class: "here"%> to search again.</p>
+  </div>
+<% end %>
+
+</div>

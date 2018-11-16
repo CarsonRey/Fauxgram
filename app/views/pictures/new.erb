@@ -1,0 +1,8 @@
+<%= form_for [@user, @picture] do |f| %>
+
+<%= f.label "Picture" %>
+<%= f.file_field :img_url%>
+<%= f.label :description %>
+<%= f.text_field :description%>
+<%= f.submit "Post Pic"%>
+<% end %>

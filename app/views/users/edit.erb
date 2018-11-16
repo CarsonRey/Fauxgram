@@ -1,0 +1,34 @@
+<%= form_for @user do |f| %>
+<div>
+  <%= f.label :name  %>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label "Profile Picture"  %>
+  <%= f.file_field :img_url %>
+</div>
+<div>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+</div>
+<div>
+  <%= f.label :email  %>
+  <%= f.email_field :email %>
+</div>
+<div>
+  <%= f.label :number  %>
+  <%= f.telephone_field :number, place_holder: 'xxx-xxx-xxxx' %>
+</div>
+<div>
+  <%= f.label :gender  %>
+  <%= f.select :gender, ["Male", "Female", "Non Binary"] %>
+</div>
+
+  <div >
+  <%= f.submit%>
+ <button type="button" name="button"><%= link_to "Back", @user %></button>
+  </div>
+
+
+
+<%end%>

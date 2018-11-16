@@ -1,0 +1,22 @@
+
+<h3 class="header_text">COMUNITY</h1>
+<div class="discover_container">
+
+
+
+
+<% @users.each do |user| %>
+<div class="discover_user">
+
+
+  <a href= <%="/users/#{user.id}"%> >
+    <%= image_tag user.img_url, class: "user_profile_pic" %></a>
+
+    <div class="username">
+      <%= user.name %>
+    </div>
+    </div>
+<% end %>
+
+
+</div>

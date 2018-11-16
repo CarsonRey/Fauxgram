@@ -1,0 +1,62 @@
+<div class="page_container">
+
+<div class="centering_container">
+
+
+<% if @current_user == nil %>
+
+<div class="register_container">
+
+<div class="enter log">
+  <%= link_to "Log In", new_session_path, :class => "not_logged_in" %>
+</div>
+<div class="enter sign">
+  <%= link_to "Sign Up", new_user_path,:class => "not_logged_in"  %>
+  
+</div>
+
+
+</div>
+<% else %>
+
+  <% if @current_user.followees.count == 0  %>
+    <div class="empty_feed">
+      You don't follow anyone yet! Click here to discover some users to follow. 🎄
+    </div>
+
+  <% else %>
+
+  <div class="index_post_container">
+  <% @pic.take(20).each do |pic| %>
+
+  <div class="picture_author">
+    <%= image_tag pic.user.img_url, width: 50, height: 50, class: "index_user_pic"%> <%= link_to pic.user.username, pic.user, :class => "feed_username" %>
+  </div>
+
+<div class="align_picture_and_comments">
+  <div class="index_pictures">
+    <a href= <%="/users/#{pic.user.id}/pictures/#{pic.id}"%> >
+      <%= image_tag pic.img_url, class: "index_pictures" %></a>
+    </div>
+    <div class="index_picture_info">
+      <%= link_to pic.user.username, pic.user, :class => "username" %>
+      <div class="picture_description">
+        <%= pic.description%>
+      </div>
+
+    </div>
+    <div class="index_comments_container">
+
+      <% pic.comments.take(5).each do |comment| %>
+      <div class="comment">
+        <%= link_to comment.user.username, comment.user %> <%= comment.content   %>
+      </div>
+    <% end %>
+    </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+    </div> <!--  index post container -->
+  </div>
+</div>

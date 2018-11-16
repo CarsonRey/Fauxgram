@@ -1,0 +1,7 @@
+<% @user.followees.each do |followee| %>
+
+  <%= followee.name %>
+  <a href= <%="/users/#{followee.id}"%> >
+    <%= image_tag followee.img_url, class: "user_profile_pic" %></a>
+
+<% end %>
