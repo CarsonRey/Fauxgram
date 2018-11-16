@@ -8,11 +8,11 @@
 <div class="register_container">
 
 <div class="enter log">
-  <%= link_to "Log In", new_session_path, :class => "not_logged_in" %>
+  <%= link_to "Log In", new_session_path, :class => "not_logged_in log enter" %>
 </div>
-<div class="enter sign">
-  <%= link_to "Sign Up", new_user_path,:class => "not_logged_in"  %>
-  
+<div class="enter ">
+  <%= link_to "Sign Up", new_user_path,:class => "not_logged_in sign enter"  %>
+
 </div>
 
 
@@ -21,7 +21,11 @@
 
   <% if @current_user.followees.count == 0  %>
     <div class="empty_feed">
-      You don't follow anyone yet! Click here to discover some users to follow. 🎄
+
+        <p class="sorry red">Sorry!</p>
+
+      <p class="empty_feed_inner_message">You don't follow anyone yet! Click <%= link_to "here", discover_path, class: "link"%> to discover some users to follow. 🎄  </p>
+
     </div>
 
   <% else %>
@@ -53,7 +57,7 @@
       </div>
     <% end %>
     </div>
-      </div>
+  </div>
     <% end %>
   <% end %>
 <% end %>

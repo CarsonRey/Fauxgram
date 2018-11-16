@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
       # redirect_to user_picture_path(@picture)
       redirect_to "/users/#{@user.id}/pictures/#{@picture.id}"
     else
-      render :new
+      redirect_to "/users/#{@user.id}/pictures/#{@picture.id}"
     end
   end
 

@@ -1,14 +1,26 @@
 <div class="centering_container">
   <div class="form_container">
 
+<div class="message">
+<% if @error %>
+    <p class="red">Sorry!</p> <p class="inner_message">There are no pictures with the hashtag you entered. Please search again.</p>
+<% end %>
+
+
 
   <%= form_for(Hashtag.new, url: search_result_path, method: :get )  do |f| %>
-    <div class="label">
-      <%= f.label "Hashtag Input" %>
+    <div class="message">
+      <%= f.label "Hashtag Search" %>
+    </div>
+    <div class="comment_input">
+      <%= f.text_field :hashtag %>
+    </div>
+    <div class="search">
+      <%= f.submit "Find", class: "search" %>
     </div>
 
-    <%= f.text_field :hashtag %>
-    <%= f.submit "Find" %>
   <% end %>
+
+  </div>
     </div>
 </div>

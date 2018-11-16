@@ -9,8 +9,14 @@ class User < ApplicationRecord
   has_many :pictures
   has_many :comments, through: :pictures
   # has_many :hashtags
-   has_secure_password
-   has_one_attached :img_url
+  has_secure_password
+  has_one_attached :img_url
+  validates :username, presence: true
+  validates :username, uniqueness: true
+  validates :username, length: {minimum: 3, maximum: 15}
+  validates :name, presence: true
+  validates :password, presence: true
+  validates :password, length: {minimum: 6, maximum: 20}, allow_nil: true
 
   # def password=(plaintext_password)
   #   self.password_digest = BCrypt::Password.create(plaintext_password)
