@@ -23,6 +23,7 @@
   margin: 10% 35% 0% 35%;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   background-color: white;
   background: rgba(255,255,255, 0.5);
@@ -39,6 +40,7 @@
 
  .enter{
   padding: 50px 0px;
+  text-align: center;
  }
 
  .sign:hover{
@@ -116,7 +118,7 @@
   top: 0;
   left: 0;
   object-fit: cover;
-  width: 100% vh;
+  width: 100%;
   min-height: 100%;
   z-index: -99;
   opacity: .75;
@@ -172,7 +174,8 @@
 
 .link{
   text-decoration: none;
-  color: #537696;
+  color: #53749A;
+  font-weight: bold;
 }
 
 .link:hover{
@@ -181,7 +184,9 @@
 
 .form_container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  padding: 60px;
 }
 
 .form{
@@ -190,6 +195,18 @@
 
 
 #hashtag_hashtag{
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#username{
+  width: 90%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#password{
   width: 90%;
   border-radius: 5px;
   padding: 10px;
@@ -210,7 +227,7 @@
   src: url('SnapsTasteChristmas'); /* IE9 Compat Modes */
   src: url('SnapsTasteChristmas.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('SnapsTasteChristmas.woff2') format('woff2'), /* Super Modern Browsers */
-       /* url('SnapsTasteChristmas.woff') format('woff'), /* Pretty Modern Browsers */ 
+       /* url('SnapsTasteChristmas.woff') format('woff'), /* Pretty Modern Browsers */
        url('SnapsTasteChristmas.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('SnapsTasteChristmas.svg#svgFontName') format('svg'); /* Legacy iOS */
 }

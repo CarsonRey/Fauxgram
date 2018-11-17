@@ -4,7 +4,7 @@
 <div class="user_top">
 
   <div class="user_profile_pic">
-    <%= image_tag @user.img_url, :class => "user_profile_pic" %>
+    <%= image_tag @user.img_url,  :class => "user_profile_pic" %>
     <p> <%= @user.name %> </p>
   </div>
 
@@ -14,11 +14,11 @@
       Posts: <%= @user.pictures.length %>
     </div>
     <div class="show_followers">
-      <%= link_to "Followers:", followers_path %>
+      <%= link_to "Followers:", followers_path, class: "link" %>
       <%= @user.followers.length %>
     </div>
     <div class="show_followees">
-      <%= link_to "Following:", followees_path  %>
+      <%= link_to "Following:", followees_path, class: "link"  %>
         <%= @user.followees.length %>
     </div>
   </div>
@@ -29,13 +29,13 @@
 <div class="show_button">
     <% if @authorization %>
 
-      <%= link_to "New Pic", "/users/#{@user.id}/pictures/new" %>
+      <%= link_to "New Pic", "/users/#{@user.id}/pictures/new", class: "link"  %>
 
       <%= form_for @user, url: edit_user_path, method: "get" do |f| %>
       <%= f.submit %>
       <% end %>
 
-      <%= link_to "Logout", destroy_session_path, :method => :delete %>
+      <%= link_to "Logout", destroy_session_path, class: "link",  :method => :delete %>
 
 
     <% elsif @current_user_does_not_follow %>
@@ -49,16 +49,19 @@
 </div>
 
 </div>
-<div class="show_bio">
-  "<%= @user.bio %>"
-</div>
+
+<% if @user.bio %>
+  <div class="show_bio">
+    "<%= @user.bio %>"
+  </div>
+<% end %>
 
 
 <div class="picture_container">
     <% @user.pictures.each do |picture| %>
       <div class="picture_icon">
         <a href= <%="/users/#{@user.id}/pictures/#{picture.id}"%> >
-        <%= image_tag picture.img_url, width: 200, height: 200%></a>
+        <%= image_tag picture.img_url, width: 200, height: 200, class: "picture_icon"%></a>
       </div>
     <% end %>
   </div>

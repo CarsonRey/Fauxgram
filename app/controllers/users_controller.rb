@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def show
+
     if current_user
       @current_user_does_not_follow = !current_user_follows?
       @current_user_follows = current_user_follows?

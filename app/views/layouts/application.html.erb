@@ -20,10 +20,11 @@
       <div class="index_button, nav" >
         <%= link_to "Feed", users_index_path, class: "nav"%>
       </div>
-
+      <% if session[:user_id]%>
       <div class="search_button, nav">
         <%= link_to "Search", search_path, class: "nav"%>
       </div>
+      <% end %>
       <%= link_to "FAUXGRAM", users_index_path, :class =>
       "logo" %>
       <div class="discover_button, nav" >

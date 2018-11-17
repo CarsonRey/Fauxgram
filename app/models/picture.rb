@@ -6,6 +6,6 @@ class Picture < ApplicationRecord
   has_one_attached :img_url
   has_many :picture_hashtags
   has_many :hashtags, through: :picture_hashtags
-  validates :img_url, presence: true
+  # validates :img_url, presence: true
 
 end

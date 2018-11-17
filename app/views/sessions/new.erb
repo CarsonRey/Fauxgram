@@ -1,7 +1,14 @@
+<div class="centering_container">
+  <div class="form_container">
+
 <%= form_with url: sessions_path, local: true do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log In" %>
+  <%= f.label :username, class:"message" %>
+  <%= f.text_field :username, class: "comment_input" %>
+  <%= f.label :password, class:"message" %>
+  <%= f.password_field :password, class: "comment_input" %>
+  <%= f.submit "Log In", class: "search" %>
 <% end %>
+
+
+  </div>
+</div>
