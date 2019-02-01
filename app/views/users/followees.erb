@@ -1,7 +1,17 @@
+<div class="discover_container">
 <% @user.followees.each do |followee| %>
 
-  <%= followee.name %>
+<div class="discover_user">
+
   <a href= <%="/users/#{followee.id}"%> >
     <%= image_tag followee.img_url, class: "user_profile_pic" %></a>
 
+    <div class="username">
+    <%= followee.name %>
+    </div>
+</div>
+
+
 <% end %>
+
+</div>

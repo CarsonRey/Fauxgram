@@ -1,7 +1,13 @@
+<div class="discover_container">
 <% @user.followers.each do |follower| %>
-
-  <%= follower.name %>
+<div class="discover_user">
   <a href= <%="/users/#{follower.id}"%> >
     <%= image_tag follower.img_url, class: "user_profile_pic" %></a>
 
+    <div class="username">
+    <%= follower.name %>
+    </div>
+</div>
 <% end %>
+
+</div>

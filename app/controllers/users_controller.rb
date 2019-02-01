@@ -74,12 +74,6 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def followers
-  end
-
-  def followees
-  end
-
 
   def redirect
       redirect_to session[:previous_url]
