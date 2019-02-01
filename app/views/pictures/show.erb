@@ -1,68 +1,71 @@
 <div class="show_picture_container">
-<div class="picture_and_comments">
+  <div class="picture_and_comments">
 
 
-<div class="picture_pic">
-  <div class="picture">
-    <%= image_tag @picture.img_url, :class => "picture" %>
-   </div>
+    <div class="picture_pic">
 
-
-
-  <div class="picture_edit_delete">
-<% if @user_can_edit_picture %>
-    <%= link_to "Edit", edit_user_picture_path  %>
-    <%= button_to "Delete", [@user, @picture] , method: :delete %>
-    <% end %>
-  </div>
-</div>
-
-
-
-<div>
-  <% Icon.all.each do |icon| %>
-  <%= link_to icon.icon,  "/users/#{@user.id}/pictures/#{@picture.id}/likes/#{icon.id}", method: :post %>
-  <%= icon.pictures.length %>
-  <% end %>
-</div>
-
-<hr>
-<div class="picture_info">
-
-  <div class="user_and_description">
-
-      <%= link_to @user.username, @user, :class => "username" %>
-      <div class="picture_description">
-        <%= @picture.description %>
+      <div class="picture">
+        <%= image_tag @picture.img_url, :class => "picture" %>
       </div>
 
-  </div>
-
-<hr>
-  <div class="comments_box">
-      <% @picture.comments.each do |comment| %>
-      <div class="user_of_comment">
-        <%= link_to comment.user.username, comment.user, :class => "user_of_comment"%>
+      <div class="picture_edit_delete">
+        <% if @user_can_edit_picture %>
+          <%= link_to "Edit", edit_user_picture_path  %>
+          <%= button_to "Delete", [@user, @picture] , method: :delete %>
+        <% end %>
       </div>
-      <div class="comment_of_user">
-         : <%=comment.content %>
+    </div>
+
+    <div>
+      <% Icon.all.each do |icon| %>
+
+      <%= link_to icon.icon,  "/users/#{@user.id}/pictures/#{@picture.id}/likes/#{icon.id}", method: :post %>
+
+      <% @number = @likes.select do |like|
+      
+         like.icon_id == icon.id
+       end %>
+       <%= @number.length %>
+
+
+
+
+      <% end %>
+    </div>
+
+    <hr>
+    <div class="picture_info">
+
+      <div class="user_and_description">
+
+          <%= link_to @user.username, @user, :class => "username" %>
+          <div class="picture_description">
+            <%= @picture.description %>
+          </div>
+
       </div>
-    <% end %>
+
+    <hr>
+      <div class="comments_box">
+          <% @picture.comments.each do |comment| %>
+          <div class="user_of_comment">
+            <%= link_to comment.user.username, comment.user, :class => "user_of_comment"%>
+          </div>
+          <div class="comment_of_user">
+             : <%=comment.content %>
+          </div>
+        <% end %>
+      </div>
+
+
+      <%= form_for [@user, @picture, @comment] do |f| %>
+      <div class="comment_input">
+        <%= f.text_area :content, placeholder: "Leave a comment" %>
+      </div>
+      <%=  f.submit "Post"%>
+
+      <% end %>
+    </div>
+
   </div>
-
-
-  <%= form_for [@user, @picture, @comment] do |f| %>
-  <div class="comment_input">
-    <%= f.text_area :content, placeholder: "Leave a comment" %>
-  </div>
-  <%=  f.submit "Post"%>
-
-  <% end %>
-</div>
-
-</div>
-
-
-
-
 </div>

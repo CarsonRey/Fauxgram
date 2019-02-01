@@ -28,6 +28,7 @@ class PicturesController < ApplicationController
     @user_can_edit_picture = authorized_on_picture
     @comment = Comment.new
     @like = Like.new
+    @likes = @picture.likes
   end
 
   def edit

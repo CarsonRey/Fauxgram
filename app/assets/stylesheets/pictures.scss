@@ -85,17 +85,13 @@
 
 }
 
-// .index_post{
-//   background-color: red;
-//   max-width: 600px;
-// }
-
 .index_user_pic{
   border-radius: 50%;
 }
 
 .picture_edit_form_input{
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .edit_form_buttons{
@@ -105,6 +101,12 @@
 
 select#user_gender{
   width: 100%;
+}
+
+.button-container{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .label{
