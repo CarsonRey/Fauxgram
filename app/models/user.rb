@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :pictures
   has_many :comments, through: :pictures
+  # has_many :donatees, class_name: "Relationship",
   # has_many :hashtags
   has_secure_password
   has_one_attached :img_url

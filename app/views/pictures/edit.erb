@@ -1,6 +1,10 @@
-<%= form_for [@user, @picture] do |f| %>
 
-<%= f.label :description %>
-<%= f.text_field :description%>
-<%= f.submit "Edit Pic"%>
-<% end %>
+<div class="centering_container">
+  <div class="form_container">
+    <%= form_for [@user, @picture] do |f| %>
+      <%= f.label :description, class: "message" %> <br>
+      <%= f.text_field :description, class: "picture_edit_form_input"%>
+      <%= f.submit "Edit Pic", class: "picture_edit_form_input"%>
+    <% end %>
+  </div>
+</div>
